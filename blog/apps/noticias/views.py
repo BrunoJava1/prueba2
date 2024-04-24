@@ -1,5 +1,12 @@
 from django.shortcuts import render
-# Create your views here.
+from .models import Noticia
+
 def ListarNoticias(request):
-    return render (request, 'noticias/listar.html')
+    contexto = {}
+
+    n = Noticia.objects.all() # SELECT * FROM NOTICIAS
+    contexto['noticias'] = n
+   
+    return render (request, 'noticias/listar.html', contexto)
+
 

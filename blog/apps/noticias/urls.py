@@ -6,3 +6,5 @@ app_name = 'noticias'
 urlpatterns = [
     path('', views.ListarNoticias, name='listar'),
 ]
+
+

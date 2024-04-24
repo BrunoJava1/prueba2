@@ -18,6 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +29,6 @@ urlpatterns = [
     #parametro 1: es el texto de la url
     #parametro 2: la vista que se va a ejecutar
     #parametro 3: el nombre de la url
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
